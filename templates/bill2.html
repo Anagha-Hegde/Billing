@@ -1,0 +1,241 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.0-beta1 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <title>Market Billing System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+
+
+
+
+        <div class=" bg-dark text-white p-2">
+            <h1 class="display-4 text-center">Billing System</h1>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row content bg-pink">
+                <div class="col-sm-4 bg-success text-center text-white p-sm-0">
+                    <form class="was-validation pl-sm-2 bg-primary">
+
+
+                         <div class="form-row pr-2">
+                            <label for="fruit-id" class="col-sm-4 text-left fruit-input">Invoice no : </label>
+                            <input type="text" class='col-sm-7 mb-sm-2 form-control' id="fruit-id" name="fruit-id" placeholder="Invoice no" required>
+                        </div>
+
+                        <div class="form-row pr-2">
+                            <label for="fruit-name" class="col-sm-4 text-left fruit-input">Item Name : </label>
+                            <input type="text" class='col-sm-7 mb-sm-2 form-control' id="fruit-name" name="fruit-name" placeholder="Item name" required>
+                        </div>
+
+                        <div class="form-row pr-2">
+                            <label for="fruit-price" class="col-sm-4 text-left fruit-input">Item Price : </label>
+                            <input type="number" class="col-sm-7 mb-sm-2 form-control" id="fruit-price" name="fruit-price" required>
+                        </div>
+
+                        <div class="form-row pr-2 form-group">
+                            <label for="fruit-quantity" class="col-sm-4 text-left fruit-input">Quantity : </label>
+                            <input type="number" class="col-sm-7 mb-sm-2 form-control" id="fruit-quantity" name="fruit-quantity" required>
+                        </div>
+
+                        <div class="container">
+                            <button type="submit" class="btn btn-success" id="add-btn">Add</button> <br><br>
+                            <button type="button" class="btn btn-danger mb-sm-2" id="fruit-basket">View Item Basket</button>
+                            <button type="button" class="btn btn-warning mb-sm-2" id="total-price">View Total Price</button>
+                        </div>
+                    </form>
+
+                    <div class="total bg-info hidden" id="total-div">
+
+                    </div>
+                </div>
+
+                <div class="col-sm-8 container-fluid hidden" id="list">
+
+                </div>
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    </body>
+
+    <style>
+        body, html {
+            height: 100%;
+        }
+
+        .flexview {
+            display: flex;
+        }
+
+        .flexview p {
+            flex: 1;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            padding-left: 10px;
+        }
+
+        .content {
+            height: 85vh;
+        }
+
+        .fruit-input {
+            margin: 0.5rem 0 0.5rem 0;
+        }
+
+        .remove-btn {
+            border: none;
+            background: rgb(255, 68, 68);
+            color: white;
+        }
+
+        .remove-btn:hover {
+            background: rgb(194, 50, 50);
+            color: white;
+        }
+
+        .large {
+            font-size: 1.2rem;
+        }
+
+        form {
+            height: 60vh;
+            padding-top: 70px;
+        }
+
+        .total {
+            height: 25vh;
+            justify-content: center;
+            padding-top: 10%;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+
+    <script>
+        const addButton = document.getElementById('add-btn');
+const list = document.getElementById('list');
+const fruitInput = document.getElementById('fruit-name');
+const priceInput = document.getElementById('fruit-price');
+const quantityInput = document.getElementById('fruit-quantity');
+const totalPrice = document.getElementById('total-price');
+const fruitBasket = document.getElementById('fruit-basket');
+const totalDiv = document.getElementById('total-div');
+
+const fruitList = [];
+let total = 0;
+
+const state = {};
+
+addButton.addEventListener('click', (e)=> {
+    e.preventDefault();
+    const fruitName = capitalize(fruitInput.value);
+    const fruitPrice = priceInput.value;
+    const fruitQuantity = quantityInput.value;
+    if(fruitName !== '' && !fruitList.includes(fruitName)) {
+
+        state[`${fruitName}`] = {
+            price: `${fruitPrice}`,
+            quantity: `${fruitQuantity}`
+        };
+
+        fruitList.push(fruitName);
+
+        renderList();
+
+        total += parseFloat(fruitPrice) * parseInt(fruitQuantity);
+        fruitInput.value = '';
+        quantityInput.value = '1';
+        priceInput.value = '';
+        renderTotal();
+    }
+});
+
+list.addEventListener('click', (e)=>{
+    const element = e.target;
+    if(element.classList[0] === 'button') {
+        const elementNode = element.parentElement;
+        const elementDataName = element.dataset.name;
+        let elementDataPrice = parseFloat(element.dataset.price);
+        let elementDataQuantity = parseInt(element.dataset.quantity);
+        total = total - (parseFloat(elementDataPrice) * parseInt(elementDataQuantity));
+        elementNode.remove();
+        if(fruitList.includes(elementDataName))
+        {
+            const index = fruitList.indexOf(elementDataName);
+            fruitList.splice(index,1);
+            delete state[`${elementDataName}`];
+        }
+
+        renderList();
+        renderTotal();
+    }
+});
+
+totalPrice.addEventListener('click', () => {
+
+    totalDiv.classList.toggle('hidden');
+    renderTotal();
+
+})
+
+fruitBasket.addEventListener('click', () => {
+    list.classList.toggle('hidden');
+})
+
+const renderList = () => {
+    list.innerHTML = '';
+
+    //console.log(quantityInput.value);
+    // Setting the items in alphabetical order
+    fruitList.sort();
+    fruitList.forEach((fruit) => {
+
+        itemHtml = `
+            <div class="mt-sm-3 bg-light alert flexview">
+                <p class="large">${fruit}</p>
+                <button type="button" class="button col-sm-2 remove-btn" data-name="${fruit}" data-price="${state[`${fruit}`].price}" data-quantity="${state[`${fruit}`].quantity}">Remove</button>
+            </div>`;
+        list.insertAdjacentHTML('beforeend', itemHtml);
+    })
+}
+
+const renderTotal = () => {
+    totalDiv.innerHTML = '';
+    //const html = `Total : <span>${total}</span>`;
+    const html = `<p class="display-4">Total: <span>${total}</span></p>`;
+    totalDiv.insertAdjacentHTML('afterbegin', html);
+}
+
+const capitalize = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+    </script>
+</html>
+
+{% endblock %}

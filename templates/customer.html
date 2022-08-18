@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+
+
+<br><br><br>
+
+      <div class="h-100 d-flex align-items-center justify-content-center">
+          <h2>Create Customer</h2>
+      </div>
+
+
+      <br>
+      <div class="container h-100 d-flex align-items-center justify-content-center fs-5">
+        <div class="customer border border-3 h-auto d-inline-block" style="border-radius: .75rem;">
+          <div class="mt-5 me-5 ms-5 mr-5">
+            <div class="d-flex flex-column bd-highlight mb-3">
+              <div class="mx-auto">
+                  <form action = "/customer" method="post">
+                    <label>Invoice number</label>
+                    <div class="input-sm"><input type="text" placeholder="no" name="no"></div><br>
+                    <label>SSN</label>
+                    <div class="input-sm"><input type="text" placeholder="SSN" name="SSN"></div><br>
+                    <label>Customer Name</label>
+                    <div class="input-sm"><input type="text" placeholder="Customer Name" name="custname"></div><br>
+                    <label>Contact number</label>
+                    <div class="input-sm"><input type="text" placeholder="Contact number" name="contactnum">
+                    </div>
+
+                      <div>
+                         <table>
+                             <td>
+                         <div class="form-group" style="margin-right: 60px">
+                              <button type="submit" class="btn btn-primary" id="sendInfobtn">Save</button>
+                         </div>
+                            </td>
+                          <br>
+                        <!--  button for back-->
+                             <td>
+                          <div style="margin-right: 20px;">
+                            <a href="/" class="btn btn-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-reply-fill" viewBox="0 0 16 16">
+                                    <path d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z"/>
+                                </svg>
+                                <i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i> Back
+                            </a>
+                          </div>
+                             </td>
+                          </table>
+                      </div>
+
+                  </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+{% endblock %}

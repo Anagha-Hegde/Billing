@@ -1,0 +1,249 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block body %}
+
+
+<!--    <div class="container fs-5">-->
+<!--        <div class="row">-->
+<!--            <div class="col-sm-4">-->
+<!--                <div class="mx-auto">-->
+<!--                    <form action="/inventory" method="post">-->
+<!--                        <label for="productId">Product Id : </label><br>-->
+<!--                        <div class="input-sm"><input type="text" name="productid"></div><br>-->
+<!--                        <label for="enterProduct">Product : </label><br>-->
+<!--                        <div class="input-sm"><input type="text" name="productname"></div><br>-->
+<!--                        <label for="quantity">Quantity: </label><br>-->
+<!--                        <div class="input-sm"><input type="text" name="quantity"></div><br>-->
+<!--                        <label for="price">Price: </label><br>-->
+<!--                        <div class="input-sm"><input type="text" name="price"></div><br>-->
+
+<!--                        <div class="form-group">-->
+<!--                          <button type="submit" class="btn btn-primary" id="sendInfobtn">Add Item</button>-->
+<!--                      </div>-->
+<!--                    </form>-->
+
+<!--                        <div class="btn-group">-->
+<!--                            <div style="margin-right: 16px">-->
+<!--                                <button type="button" class="btn btn-primary">-->
+<!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-square-fill" viewBox="0 0 16 16">-->
+<!--                                    <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.5 4.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3a.5.5 0 0 1 1 0z"></path>-->
+<!--                                    </svg>-->
+<!--                                    Add Item-->
+<!--                                </button>-->
+<!--                            </div>-->
+
+<!--                            <div class="btn-group ">-->
+<!--                                <a href="/" class="btn btn-primary">-->
+<!--                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-reply-fill" viewBox="0 0 16 16">-->
+<!--                                        <path d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z"/>-->
+<!--                                    </svg>-->
+<!--                                    <i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i> back-->
+<!--                                </a>-->
+<!--                            </div>-->
+
+<!--                            <div class="btn-group ">-->
+<!--                                <div style="margin: 20px;">-->
+<!--                                    <a href="" class="btn btn-danger">-->
+<!--                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">-->
+<!--                                            <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>-->
+<!--                                        </svg>-->
+<!--                                        <i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i> Delete-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                </div>-->
+<!--            </div>-->
+            <!-- table start -->
+<!--            <div class="col-sm-8">-->
+
+
+<!--                <table class="table table-bordered table-hover" id="tab_logic">-->
+<!--                    <thead>-->
+<!--                        <tr>-->
+<!--                            <th class="text-center">-->
+<!--                                #-->
+<!--                            </th>-->
+<!--                            <th class="text-center">-->
+<!--                                Remaining item-->
+<!--                            </th>-->
+<!--                            <th class="text-center">-->
+<!--                                Quantity-->
+<!--                            </th>-->
+
+<!--                        </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody>-->
+<!--                        <tr id='addr0'>-->
+<!--                            <td>-->
+<!--                            1-->
+<!--                            </td>-->
+<!--                            <td>-->
+<!--                            <input type="text" name='items0'  placeholder='items' class="form-control"/>-->
+<!--                            </td>-->
+<!--                            <td>-->
+<!--                            <input type="text" name='quantity0' placeholder='quantity' class="form-control"/>-->
+<!--                            </td>-->
+<!--                        </tr>-->
+<!--                        <tr id='addr1'></tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
+
+<!--            </div>-->
+
+            <!-- end of table -->
+<!--            <table class="table">-->
+<!--                <tr>-->
+<!--                    <th>Item id</th>-->
+<!--                    <th>Item name</th>-->
+<!--                    <th>quantity</th>-->
+<!--                    <th>price</th>-->
+<!--                </tr>-->
+
+<!--                &lt;!&ndash; here is a for-loop to give us all the socks &ndash;&gt;-->
+<!--                {% for sock in items %}-->
+<!--                <tr>-->
+<!--                    <td>{{sock.0}}</td>-->
+<!--                    <td>{{sock.1}}</td>-->
+<!--                    <td>{{sock.2}}</td>-->
+<!--                    <td>{{sock.3}}</td>-->
+<!--                </tr>-->
+<!--                {% endfor %}-->
+<!--		    </table>-->
+<!--        </div>-->
+<!--    </div>-->
+
+
+
+<!--yoo from hereeeeeeeeeeeeeee-->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Table</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<center>
+		<table border="4">
+			<form action="/inventory" method="post">
+			<thead>
+				<tr>
+					<th>Product id</th>
+					<td><input type="text" name="fname" id="fname"></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>Product name</th>
+					<td><input type="text" name="lname" id="lname"></td>
+				</tr>
+				<tr>
+					<th>Quantity</th>
+					<td><input type="text" name="email" id="email"></td>
+				</tr>
+				<tr>
+					<th>Price</th>
+					<td><input type="text" name="age" id="age"></td>
+				</tr>
+				<tr id="btna">
+					<td colspan="2">
+<!--		<button type="submit" class="btn btn-primary" id="btn" name="button" onclick="AddRow()">Add Item</button>-->
+						<input type="button" name="button" id="btn" value="Add" onclick="AddRow()">
+						<button type="submit" class="btn btn-primary" id="sendInfobtn">Add Item</button>
+					</td>
+				</tr>
+
+<!--	<div class="form-group">-->
+<!--		<button type="submit" class="btn btn-primary" id="sendInfobtn">Add Item</button>-->
+<!--		</div>-->
+			</form>
+			</tbody>
+		</table>
+
+		<table border="4" id="show">
+			<thead>
+				<tr>
+					<th>Product id</th>
+					<th>Product Name</th>
+					<th>Quantity</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+		</table>
+	</center>
+
+
+	 <div style="margin-right: 20px;">
+		 <a href="/" class="btn btn-primary position-absolute bottom-0 start-50 translate-middle-x">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-reply-fill" viewBox="0 0 16 16">
+				<path d="M5.921 11.9 1.353 8.62a.719.719 0 0 1 0-1.238L5.921 4.1A.716.716 0 0 1 7 4.719V6c1.5 0 6 0 7 8-2.5-4.5-7-4-7-4v1.281c0 .56-.606.898-1.079.62z"/>
+			</svg>
+			<i class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></i> Back
+		 </a>
+	 </div>
+
+
+	<script>
+
+		var list1 = [];
+		var list2 = [];
+		var list3 = [];
+		var list4 = [];
+
+		var n = 1;
+		var x = 0;
+
+		function AddRow(){
+
+			var AddRown = document.getElementById('show');
+			var NewRow = AddRown.insertRow(n);
+
+			list1[x] = document.getElementById("fname").value;
+			list2[x] = document.getElementById("lname").value;
+			list3[x] = document.getElementById("email").value;
+			list4[x] = document.getElementById("age").value;
+
+			var cel1 = NewRow.insertCell(0);
+			var cel2 = NewRow.insertCell(1);
+			var cel3 = NewRow.insertCell(2);
+			var cel4 = NewRow.insertCell(3);
+
+			cel1.innerHTML = list1[x];
+			cel2.innerHTML = list2[x];
+			cel3.innerHTML = list3[x];
+			cel4.innerHTML = list4[x];
+
+			n++;
+			x++;
+		}
+
+	</script>
+
+    <style>
+        table{
+	margin-top: 50px;
+	text-align: center;
+	background: #333;
+	color: #fff;
+    }
+
+    #show th, #show td{
+        padding: 13px;
+    }
+
+    #btna td input{
+        width: 100%;
+    }
+    </style>
+
+</body>
+
+</html>
+
+{% endblock %}
